@@ -4,8 +4,8 @@
   "description": "Todo in sequelize",
   "main": "app.js",
   "scripts": {
-    "start": "node ./api/app.js",
-    "dev": "nodemon --watch api api/app.js",
+    "build": "babel -d ./build ./api -s",
+    "dev": "nodemon --exec babel-node ./api/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,15 +19,31 @@
   },
   "homepage": "https://github.com/cavdy-play/todo#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "@babel/runtime": "^7.4.3",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^8.5.1",
+    "randomstring": "^1.1.5",
+    "short-uuid": "^3.1.1",
     "body-parser": "^1.19.0",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.8.11",
-    "sequelize-cli": "^5.5.0"
+    "validator": "^10.11.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.3.1",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
   }
 }
