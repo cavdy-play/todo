@@ -3,6 +3,10 @@ import bodyParser from 'body-parser';
 
 // Import Routes
 import authRoute from './routes/auth';
+import todoRoute from './routes/todo';
+import userRoute from './routes/user';
+
+import jwtMiddleware from './middlewares/jwt';
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -18,6 +22,8 @@ app.get('/', (req, res) => {
   });
 });
 app.use('/api/auth', authRoute);
+app.use('/api/todo', jwtMiddleware.checkToken, todoRoute);
+app.use('/api/user', jwtMiddleware.checkToken, userRoute);
 
 app.listen(PORT, () => {
   console.log(`Server running at ${PORT}`);
