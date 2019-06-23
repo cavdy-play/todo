@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "babel -d ./build ./api -s",
+    "start": "node ./build/app.js",
     "dev": "nodemon --exec babel-node ./api/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
