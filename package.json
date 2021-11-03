@@ -35,7 +35,7 @@
     "sequelize": "^5.15.1",
     "sequelize-cli": "^5.5.0",
     "short-uuid": "^3.1.1",
-    "validator": "^10.11.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.1",
